@@ -1,5 +1,6 @@
 
 login = '<email>'
+# https://security.google.com/settings/security/apppasswords
 password = '<пароль для приложения. генерируется где-то в аккаунте google>'
 playlist = 'имя playlist, из которого нужно скачать музыку'
 path = "куда скачивать музыку. сразу на флешку качает нормально"

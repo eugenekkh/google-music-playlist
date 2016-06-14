@@ -1,6 +1,8 @@
 from gmusicapi import Mobileclient
 
 import config
+from mutagen.id3 import ID3, TPE1, ID3NoHeaderError
+from mutagen.easyid3 import EasyID3
 import os
 import time
 import urllib2
@@ -42,6 +44,13 @@ def loadTrack(track):
         print status,
 
     f.close()
+
+    audio = EasyID3()
+    audio['title'] = track["track"]["title"]
+    audio['artist'] = track["track"]["artist"]
+    audio['album'] = track["track"]["album"]
+    audio['composer'] = track["track"]["composer"]
+    audio.save(file_name)
 
     return True
 
