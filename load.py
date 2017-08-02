@@ -18,6 +18,7 @@ def loadTrack(track):
 
     name = buildFileName(track)
     file_name = config.path + "/" + name
+    file_name = file_name.encode('utf8')
 
     if os.path.isfile(file_name):
         print name + " already exists"
